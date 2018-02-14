@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<payment>
+  <sender>
+    <hash>e8fb747184c85f6ef80ce79632138115ac4468ae53d8b8d91895749322bb48e3</hash>
+    <ip>1.1.1.1</ip>
+    <email>c87947564495873875861@sandbox.pagseguro.com.br</email>
+    <phone>
+      <areaCode>99</areaCode>
+      <number>99999999</number>
+    </phone>
+    <bornDate>01/01/1900</bornDate>
+    <documents>
+      <document>
+        <type>CPF</type>
+        <value>11475714734</value>
+      </document>
+    </documents>
+    <name>Jose Comprador</name>
+  </sender>
+  <mode>default</mode>
+  <currency>BRL</currency>
+  <notificationURL>https://sualoja.com.br/notifica.html</notificationURL>
+  <receiverEmail>gabrielferrer@outlook.com.br</receiverEmail>
+  <reference>REF1234</reference>
+  <extraAmount>1.00</extraAmount>
+  <method>boleto</method>
+  <promoCode>PROMOCODE_PAGSEGURO</promoCode>
+  <items>
+    <item>
+      <id>0001</id>
+      <description>Produto PagSeguroI</description>
+      <amount>19.99</amount>
+      <quantity>1</quantity>
+    </item>
+  </items>
+  <shipping>
+    <address>
+      <street>Av. PagSeguro</street>
+      <number>9999</number>
+      <complement>99o andar</complement>
+      <district>Jardim Internet</district>
+      <city>Cidade Exemplo</city>
+      <state>SP</state>
+      <country>BRA</country>
+      <postalCode>99999999</postalCode>
+    </address>
+    <type>1</type>
+    <cost>1.00</cost>
+    <addressRequired>true</addressRequired>
+  </shipping>
+  <dynamicPaymentMethodMessage>
+    <creditCard>Minha loja</creditCard>
+    <boleto>Minha loja</boleto>
+  </dynamicPaymentMethodMessage>
+  <creditCard>
+    <token>c27d0f1bf5ef4662b30798fedbc8d802</token>
+    <installment>
+      <quantity>1</quantity>
+      <noInterestInstallmentQuantity>2</noInterestInstallmentQuantity>
+      <value>9.99</value>
+    </installment>
+    <holder>
+      <name>Jose Comprador</name>
+      <documents>
+        <document>
+          <type>CPF</type>
+          <value>11475714734</value>
+        </document>
+      </documents>
+      <birthDate>01/01/1900</birthDate>
+      <phone>
+        <areaCode>99</areaCode>
+        <number>99999999</number>
+      </phone>
+    </holder>
+    <address>
+      <street>Av. PagSeguro</street>
+      <number>9999</number>
+      <complement>99o andar</complement>
+      <district>Jardim Internet</district>
+      <city>Cidade Exemplo</city>
+      <state>SP</state>
+      <country>BRA</country>
+      <postalCode>99999999</postalCode>
+    </address>
+  </creditCard>
+  <bank>
+    <name>bancodobrasil</name>
+  </bank>
+</payment>e

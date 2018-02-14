@@ -1,0 +1,211 @@
+<ui-card>
+  <ui-card-title>
+    Finalizando compra
+  </ui-card-title>
+
+  <ui-card-content>
+    <ui-input-container>
+      <input type="text"
+             id="numberCard"
+             name="numberCard"
+             [(ngModel)]="info.cardNumber"
+             #numberCard="ngModel"
+             uiInput
+             (blur)="pagSeguroService.getBrand(numberCard)"
+             required>
+      <label for="numberCard">Numero do cartão</label>
+    </ui-input-container>
+
+    <ui-input-container>
+      <input type="text"
+             id="valideMonthCard"
+             name="valideMonthCard"
+             [(ngModel)]="info.valideMonthCard"
+             #valideMonthCard="ngModel"
+             uiInput
+             required>
+      <label for="valideMonthCard">Mês de validade do cartão</label>
+    </ui-input-container>
+
+    <ui-input-container>
+      <input type="text"
+             id="numberYearCard"
+             name="numberYearCard"
+             [(ngModel)]="info.numberYearCard"
+             #numberYearCard="ngModel"
+             uiInput
+             required>
+      <label for="numberYearCard">Ano de validade do cartão</label>
+    </ui-input-container>
+
+    <ui-input-container>
+      <input type="text"
+             id="codeSecurityCard"
+             name="codeSecurityCard"
+             [(ngModel)]="info.codeSecurityCard"
+             #codeSecurityCard="ngModel"
+             uiInput
+             required>
+      <label for="codeSecurityCard">Codigo de segurança</label>
+    </ui-input-container>
+
+    <ui-input-container>
+      <ui-select #parcelas="ngModel"
+                 name="parcelas"
+                 id="parcelas"
+                 [(ngModel)]="info.parcelas"
+                 [options]="pagSeguroService.selectParcelas"
+                 value="nome"
+                 label="nome"
+                 uiInput
+                 required>
+      </ui-select>
+      <label for="parcelas">Parcelas</label>
+    </ui-input-container>
+
+    <button class="ui-button full" (click)="pagSeguroService.createCardToken(info)" uiRipple>Cadastrar cartão</button>
+
+    <button class="ui-button full" (click)="pagSeguroService.getInstallments(100)" uiRipple>Parcelamento</button>
+
+    <button class="ui-button full" (click)="pagSeguroService.getDadosFromBuy(info)" uiRipple>Comprar</button>
+
+    <div *ngIf="false">
+  <ui-input-container>
+    <input type="text"
+           id="nameCard"
+           name="nameCard"
+           [(ngModel)]="info.nameCard"
+           #nameCard="ngModel"
+           uiInput
+           required>
+    <label for="nameCard">Nome</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="text"
+           id="cpfCard"
+           name="cpfCard"
+           [(ngModel)]="info.cpfCard"
+           #cpfCard="ngModel"
+           uiInput
+           uiMaskCpf
+           required>
+    <label for="cpfCard">CPF</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="text"
+           id="birthCard"
+           name="birthCard"
+           [(ngModel)]="info.birthCard"
+           #birthCard="ngModel"
+           uiInput
+           uiMaskDate
+           required>
+    <label for="birthCard">Data de nascimento</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="tel"
+           id="phoneCard"
+           name="phoneCard"
+           [(ngModel)]="info.phoneCard"
+           #phoneCard="ngModel"
+           uiInput
+           uiMaskPhone
+           required>
+    <label for="phoneCard">Telefone</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="email"
+           id="emailCard"
+           name="emailCard"
+           [(ngModel)]="info.emailCard"
+           #emailCard="ngModel"
+           uiInput
+           required>
+    <label for="emailCard">Email</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="text"
+           id="addressCard"
+           name="addressCard"
+           [(ngModel)]="info.addressCard"
+           #addressCard="ngModel"
+           uiInput
+           required>
+    <label for="addressCard">Endereço</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="number"
+           id="addressNumberCard"
+           name="addressNumberCard"
+           [(ngModel)]="info.addressNumberCard"
+           #addressNumberCard="ngModel"
+           uiInput
+           uiMaskInteger
+           required>
+    <label for="addressNumberCard">Número</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="text"
+           id="neighborhoodCard"
+           name="neighborhoodCard"
+           [(ngModel)]="info.neighborhoodCard"
+           #neighborhoodCard="ngModel"
+           uiInput
+           required>
+    <label for="neighborhoodCard">Bairro</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="number"
+           id="cepCard"
+           name="cepCard"
+           [(ngModel)]="info.cepCard"
+           #cepCard="ngModel"
+           uiInput
+           uiMaskCep
+           required>
+    <label for="cepCard">CEP</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="text"
+           id="stateCard"
+           name="stateCard"
+           [(ngModel)]="info.stateCard"
+           #stateCard="ngModel"
+           uiInput
+           required>
+    <label for="stateCard">Estado</label>
+  </ui-input-container>
+
+  <ui-input-container>
+    <input type="text"
+           id="cityCard"
+           name="cityCard"
+           [(ngModel)]="info.cityCard"
+           #cityCard="ngModel"
+           uiInput
+           required>
+    <label for="cityCard">Cidade</label>
+  </ui-input-container>
+
+  <select name="parcela" [(ngModel)]="info.parcela" #parcela="ngModel">
+    <option *ngFor="let p of info.parcelas" [value]="p['quantity']+'|'+p['installmentAmount']">{{ p['quantity'] + "x " + p['installmentAmount'] }}</option>
+  </select>
+</div>
+
+  </ui-card-content>
+
+
+  <pre>
+    {{ info | json }}
+  </pre>
+</ui-card>
+
